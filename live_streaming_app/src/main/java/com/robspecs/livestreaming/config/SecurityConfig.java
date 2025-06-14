@@ -1,4 +1,4 @@
-package com.robspecs.live_streaming_app.config;
+package com.robspecs.livestreaming.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 

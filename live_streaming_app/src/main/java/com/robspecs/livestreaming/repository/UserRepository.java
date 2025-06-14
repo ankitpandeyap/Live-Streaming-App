@@ -1,4 +1,4 @@
-package com.robspecs.live_streaming_app.repository;
+package com.robspecs.livestreaming.repository;
 
 import java.util.Optional;
 
@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.robspecs.live_streaming_app.entities.User;
+import com.robspecs.livestreaming.entities.User;
 
 
 

@@ -1,4 +1,4 @@
-package com.robspecs.live_streaming_app.config;
+package com.robspecs.livestreaming.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

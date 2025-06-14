@@ -1,4 +1,4 @@
-package com.robspecs.live_streaming_app.security;
+package com.robspecs.livestreaming.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,8 +8,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.robspecs.live_streaming_app.entities.User;
-import com.robspecs.live_streaming_app.repository.UserRepository;
+import com.robspecs.livestreaming.entities.User;
+import com.robspecs.livestreaming.repository.UserRepository;
 
 
 

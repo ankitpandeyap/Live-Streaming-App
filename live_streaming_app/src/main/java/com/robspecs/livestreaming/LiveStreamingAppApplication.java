@@ -1,4 +1,4 @@
-package com.robspecs.live_streaming_app;
+package com.robspecs.livestreaming;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

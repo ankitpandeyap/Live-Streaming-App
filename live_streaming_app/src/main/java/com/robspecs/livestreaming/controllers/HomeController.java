@@ -1,4 +1,4 @@
-package com.robspecs.live_streaming_app.controllers;
+package com.robspecs.livestreaming.controllers;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
