@@ -4,7 +4,7 @@ import axiosInstance from "../api/axiosInstance"; // Your configured Axios insta
 import { toast } from "react-toastify";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Header from "../components/Header";
-import "../css/Login.css"; // Reuse existing CSS
+
 
 export default function ResetPasswordPage() {
   const [newPassword, setNewPassword] = useState("");

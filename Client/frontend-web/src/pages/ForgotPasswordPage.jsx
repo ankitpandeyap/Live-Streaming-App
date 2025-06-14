@@ -3,7 +3,7 @@ import axiosInstance from "../api/axiosInstance"; // Your configured Axios insta
 import { toast } from "react-toastify";
 import LoadingSpinner from "../components/LoadingSpinner"; // Assuming you have this component
 import Header from "../components/Header"; // Assuming you have this component
-import "../css/Login.css"; // Reuse existing CSS for consistent styling
+
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");

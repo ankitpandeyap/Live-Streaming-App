@@ -11,7 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.robspecs.live_streaming_app.Roles;
+import com.robspecs.live_streaming_app.enums.Roles;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
