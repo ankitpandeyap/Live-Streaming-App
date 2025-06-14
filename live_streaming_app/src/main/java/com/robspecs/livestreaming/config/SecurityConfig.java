@@ -23,6 +23,7 @@ import com.robspecs.livestreaming.security.JWTAuthenticationEntryPoint;
 import com.robspecs.livestreaming.security.JWTAuthenticationFilter;
 import com.robspecs.livestreaming.security.JWTRefreshFilter;
 import com.robspecs.livestreaming.security.JWTValidationFilter;
+import com.robspecs.livestreaming.service.TokenBlacklistService;
 import com.robspecs.livestreaming.utils.JWTUtils;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -65,9 +66,7 @@ public class SecurityConfig {
         JWTRefreshFilter jwtRefreshFilter = new JWTRefreshFilter(authenticationManager, jwtUtils, customUserDetailsService, tokenService);
         logger.debug("JWTRefreshFilter instance created.");
 
-        // New: Instantiate HlsTokenValidationFilter
-        HlsTokenValidationFilter hlsFilter = new HlsTokenValidationFilter(jwtUtils); // <--- ADD THIS
-        logger.debug("HlsTokenValidationFilter instance created."); // <--- ADD THIS
+        
 
         return http
                 .csrf(AbstractHttpConfigurer::disable)
@@ -88,19 +87,17 @@ public class SecurityConfig {
                             "/api/auth/otp/verify",
                             "/api/auth/otp/request",
                             "/api/auth/forgot-password",
-                            "/api/auth/reset-password",
-                            "/api/videos/stream/**" // Consolidated into one entry
-                    ).permitAll();
+                            "/api/auth/reset-password"
+                       ).permitAll();
                     // Consolidated log message for clarity and accuracy
-                    logger.debug("Public URLs configured: /api/auth/** endpoints and /api/videos/stream/** are permitted (HLS handled by HlsTokenValidationFilter).");
+                    logger.debug("Public URLs configured: /api/auth/** endpoints ");
 
                     auth.anyRequest().authenticated();
                     logger.debug("All other requests require authentication.");
                 })
                 // Add custom filters to the chain
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
-                // New: Add HlsTokenValidationFilter before the general JWTValidationFilter
-                .addFilterBefore(hlsFilter, JWTAuthenticationFilter.class) // <--- ADD THIS LINE (Before other JWT filters)
+               
                 .addFilterAfter(validationFilter, JWTAuthenticationFilter.class)
                 .addFilterAfter(jwtRefreshFilter, JWTValidationFilter.class)
                 .build();
