@@ -59,7 +59,7 @@ public class AuthServiceImpl implements AuthService {
             }
         }
 
-        Roles role = currDTO.getRole().equalsIgnoreCase("ADMIN") ? Roles.ADMIN : Roles.USER;
+        Roles role =  Roles.USER;
         logger.debug("Determined user role: {}", role);
 
         User user = new User();
