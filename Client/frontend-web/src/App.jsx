@@ -13,7 +13,7 @@ import ProfilePage from "./pages/ProfilePage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 import LoadingSpinner from "./components/LoadingSpinner";
-
+import StreamerDashboard from "./pages/StreamerDashboard";
 
 export default function App() {
   const location = useLocation();
@@ -60,7 +60,9 @@ export default function App() {
         */}
         <Route
           path="/register"
-          element={isAuthenticated ? <Navigate to="/dashboard" /> : <Register />}
+          element={
+            isAuthenticated ? <Navigate to="/dashboard" /> : <Register />
+          }
         />
         <Route
           path="/login"
@@ -88,16 +90,15 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+
         <Route
-          path="/my-streams" // This is the URL path for your new page
+          path="/my-streams" // This is the URL path
           element={
             <ProtectedRoute>
-              <MyVideosPage />{" "}
-              {/* This tells React to render MyVideosPage when the path matches */}
+              <StreamerDashboard /> {/* <-- CHANGE THIS LINE */}
             </ProtectedRoute>
           }
         />
-      
       </Routes>
 
       {/* Footer only on the login page */}

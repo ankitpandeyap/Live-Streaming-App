@@ -1,9 +1,5 @@
-
-// src/components/Sidebar.jsx - MODIFIED FOR VIDEO STREAMING APP
-
-import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "../css/Sidebar.css";
+
 
 export default function Sidebar() {
     const navigate = useNavigate();
@@ -38,7 +34,7 @@ export default function Sidebar() {
                         isOnDiscoverPage ? "active" : ""
                     }`}
                     onClick={handleDiscoverClick}
-                    disabled={isOnDiscoverPage} // Disable when on the current page
+                    disabled={isOnDiscoverPage} 
                 >
                     <span className="icon">🏠</span> Discover
                 </button>
@@ -49,7 +45,7 @@ export default function Sidebar() {
                         isOnMyVideosPage ? "active" : "" // Apply 'active' class if on My Videos page
                     }`}
                     onClick={handleMyVideosClick}
-                    disabled={isOnMyVideosPage} // Disable when on the current page
+                    disabled={isOnMyVideosPage} 
                 >
                     <span className="icon">🎬</span> My Streams
                 </button>
@@ -60,7 +56,7 @@ export default function Sidebar() {
                         isOnProfilePage ? "active" : ""
                     }`}
                     onClick={handleProfileClick}
-                    disabled={isOnProfilePage} // Disable when on the current page
+                    disabled={isOnProfilePage} 
                 >
                     <span className="icon">👤</span> Profile
                 </button>

@@ -5,7 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 import axiosInstance from "../api/axiosInstance";
 import { toast } from "react-toastify";
 import LoadingSpinner from "../components/LoadingSpinner";
-import "../css/Login.css";
+
 import Header from "../components/Header";
 
 export default function Login() {

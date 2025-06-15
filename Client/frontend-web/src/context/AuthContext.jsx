@@ -76,14 +76,18 @@ export const AuthProvider = ({ children }) => {
         updateToken(tokenValue); // Use updateToken to set the new token
     };
 
-    // Function to handle user logout
-    const logout = () => {
+   const logout = async () => { // <-- CORRECTED: 'aysnc' changed to 'async'
         try {
+            await axiosInstance.post("/auth/logout");
             updateToken(null); // Use updateToken to clear the token and state
         } catch (error) {
             console.error("Logout error:", error); // Keeping console.error
+            // IMPORTANT: Re-throw the error so Header component can catch it
+            throw error;
         }
     };
+
+   
 
     // Provide the state variables and functions to components consuming this context
     return (
