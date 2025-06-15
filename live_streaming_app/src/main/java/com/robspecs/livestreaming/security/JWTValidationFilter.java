@@ -54,8 +54,7 @@ public class JWTValidationFilter extends OncePerRequestFilter {
 	        String path = request.getRequestURI();
 	        // This filter should NOT run for HLS stream paths, as HlsTokenValidationFilter handles them.
 	        // It also should skip other public/authentication endpoints already handled by other filters or explicitly permitted.
-	        return path.startsWith("/api/videos/stream/") || // **CRITICAL for HLS**
-	               PUBLIC_URLS.contains(path); // Uses your existing PUBLIC_URLS list
+	        return PUBLIC_URLS.contains(path); // Uses your existing PUBLIC_URLS list
 	    }
 	
 	
